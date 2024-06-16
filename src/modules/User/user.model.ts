@@ -29,6 +29,10 @@ const userSchema = new Schema<TUser>({
         enum: UserRole, 
         default: 'user' 
     }
-  });
+  },
+  {
+   timestamps: true
+  }
+);
 
   export const User = model<TUser>("User", userSchema)
