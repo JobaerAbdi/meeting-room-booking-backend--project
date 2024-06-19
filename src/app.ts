@@ -3,6 +3,7 @@ import cors from "cors";
 import globalErrorHandler from "./middlewares/globalErrorHandler";
 import notFound from "./middlewares/notFound";
 import { UserRoutes } from "./modules/User/user.route";
+import { AuthRoutes } from "./modules/Auth/auth.route";
 
 const app: Application = express();
 
@@ -13,6 +14,7 @@ app.use(cors());
 
 
 app.use("/api/auth", UserRoutes)
+app.use("/api/auth", AuthRoutes)
 
 
 app.get("/", (req: Request, res: Response) => {
